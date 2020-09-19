@@ -1,3 +1,5 @@
+#Version 1.1
+
 ck=require("tess3r")
 if (ck==FALSE) {
   install.packages("devtools")
