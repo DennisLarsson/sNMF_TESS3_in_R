@@ -1,3 +1,5 @@
+# version 1.0
+
 ck=require("LEA")
 if (ck==FALSE) {
   install.packages("devtools")
