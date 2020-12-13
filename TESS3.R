@@ -63,7 +63,7 @@ for (K in 2:10) {
   #plot lines and names of populations into the plot
   pop <- read.delim(popmap, header = FALSE)
   pop_sorted<-pop[order(pop[,2]),]
-  axis(1, tapply(1:nrow(pop), pop[,2],mean),unique(pop_sorted[,2]),las=2, cex.axis=0.4,tick = F,line = -0.8)
+  axis(1, tapply(1:nrow(pop), pop[,2],mean),unique(pop_sorted[,2]),las=2, cex.axis=1,tick = F,line = -0.8)
   abline(v=tapply(1:nrow(pop), pop[,2],max), lty=2, lwd=0.5)
   
   #plot the diffusion map of ancestries
