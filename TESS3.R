@@ -44,7 +44,7 @@ while (i <= length(mean.cverror)-1){
 
 # Here the pdf is opened. everything that is plotted after here is plotted in the pdf file. the pdf is closed after dev.off(). skip this is dev.off() if you want to 
 # display the plots in Rstudio
-pdf(file=paste(outputname,"_tess3.pdf",sep=""), height = 5, width = 12, title = outputname)
+pdf(file=paste(outputname,"_tess3.pdf",sep=""), height = 5, width = 12, title = paste(outputname,"_tess3",sep=""))
 par(mfrow = c(1, 2))
 plot(tess3.obj, pch = 19, col = "blue", xlab = "Number of ancestral populations", ylab = "Cross-validation score",main = "Cross-validation score for each K")
 plot(diff.mean.cverror, xlab = "K value", ylab = "Difference in mean CV error", main = "Difference in mean CV error\nK(i)-K(i+1)")
