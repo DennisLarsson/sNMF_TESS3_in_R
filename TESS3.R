@@ -41,13 +41,14 @@ while (i <= length(mean.cverror)-1){
   diff.mean.cverror[i] <- mean.cverror[i]-mean.cverror[i+1]
   i = i +1
 }
-
+K_range = seq(2,10)
 # Here the pdf is opened. everything that is plotted after here is plotted in the pdf file. the pdf is closed after dev.off(). skip this is dev.off() if you want to 
 # display the plots in Rstudio
-pdf(file=paste(outputname,"_tess3.pdf",sep=""), height = 5, width = 12, title = paste(outputname,"_tess3",sep=""))
+pdf(file=paste(outputname,"_tess3.pdf",sep=""), height = 5, width = 12, title = outputname)
 par(mfrow = c(1, 2))
 plot(tess3.obj, pch = 19, col = "blue", xlab = "Number of ancestral populations", ylab = "Cross-validation score",main = "Cross-validation score for each K")
-plot(diff.mean.cverror, xlab = "K value", ylab = "Difference in mean CV error", main = "Difference in mean CV error\nK(i)-K(i+1)")
+plot(diff.mean.cverror, xaxt="n", xlab = "K value", ylab = "Difference in mean CV error", main = "Difference in mean CV error\nK(i)-K(i+1)")
+axis(side=1, at=1:9, labels = K_range)
 
 #sets up a loop to plot the admixture ratios for each K
 for (K in 2:10) {
