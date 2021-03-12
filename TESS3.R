@@ -1,4 +1,4 @@
-#Version 1.11
+#Version 1.21
 
 ck=require("tess3r")
 if (ck==FALSE) {
