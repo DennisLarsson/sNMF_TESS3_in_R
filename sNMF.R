@@ -49,11 +49,13 @@ while (i <= length(mean.ce)-1){
   i = i +1
 }
 
+K_range = seq(2,10)
 # Here the pdf is opened. everything that is plotted after here is plotted in the pdf file. the pdf is closed after dev.off(). skip this is dev.off() if you want to 
 # display the plots in Rstudio
 pdf(file=paste(outputname,"_snmf.pdf",sep=""), height = 5, width = 8, title = paste(outputname,"_snmf",sep=""))
 plot(obj.snmf, pch = 19, col = "blue",main = "Cross-entropy")
-plot(diff.mean.ce, xlab = "K value", ylab = "Difference in mean cross-entropy", main = "Difference in mean cross-entropy\nK(i)-K(i+1)")
+plot(diff.mean.ce, xaxt="n", xlab = "K value", ylab = "Difference in mean cross-entropy", main = "Difference in mean cross-entropy\nK(i)-K(i+1)")
+axis(side=1, at=1:9, labels = K_range)
 
 boxplot(CE_AllK, main = "Cross-entropy box-plot", ylab = "Cross-entropy")
 
